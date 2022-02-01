@@ -44,26 +44,9 @@ function updateCard() {
 	counter += 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Grab random API Data */
 
 async function fetchAPI(url) {
-	// id = id ?? "";
 	try {
 		const response = await fetch(url);
 		const responseJSON = await response.json();
@@ -79,11 +62,6 @@ function generateCard() {
 		fetchAPI('https://randomuser.me/api/'),
 		fetchAPI('https://programming-quotes-api.herokuapp.com/Quotes/random')
 	]).then(function (response){
-//		console.log(response[0][0].url)
-//		console.log(response[1].results[0].name.first)
-//		console.log(response[1].results[0].location.country)
-//		console.log(response[1].results[0].location.city)
-//		console.log(response[2].en)
 		
 		petArray = [...petArray,
 					 {pname: response[1].results[0].name.first,
@@ -95,74 +73,6 @@ function generateCard() {
 		console.log(err)
 	});
 }
-
-
-
-
-
-/*
-async function generateCard(){
-	 let pic, name, location, age = ""
-	
-	async function fetchAPI(url) {
-		// id = id ?? "";
-		try {
-			const response = await fetch(url);
-			const responseJSON = await response.json();
-			return responseJSON;
-		} catch (error) {
-			console.error(error);
-		};
-	}
-
-
-	async function getCat() {
-		const getData = await fetchAPI('https://api.thecatapi.com/v1/images/search');
-		return getData
-	}
-
-	async function getInfo() {
-		const getData = await fetchAPI('https://randomuser.me/api/')
-		const dataArray = [getData?.results[0].name.first, getData?.results[0].location.city + ", " + getData.results[0].location.country]
-	}
-
-	function getAge() {return Math.floor(Math.random() * 30)}
-	
-	*
-	getCat().then(data => pic = data)
-	getInfo().then(data => name = data[0])
-	getInfo().then(data => name = data[1])
-	age = getAge() *
-	
-	getInfo()
-}
-
-generateCard()*/
-
-/*
-arrayTest = [...arrayTest, generateCard()]
-console.log(arrayTest)*/
-
-
-/*
-async function generateCard() {
-	const name, location = getInfo().
-	petArray = [...petArray, {pname: getName, page: getAge, plocation: getNationality}]
-}*/
-
-
-/*
-		{pname:"Brownley",
-		page:20,
-		plocation: "PH",
-		pimage: "images\\brownley.jpg",
-		pmessage:"Helo am doggo."},
-*/
-
-
-
-
-
 
 /* Animate and Update */
 
